@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/andrew.css') }}">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/boostrap.css') }}">
+    <title>Andrew's Project 1</title>
+</head>
+
+<body>
+
+    <h1>Andrew's Project 1</h1>
+
+    <form action="/uploads/{{filename}}" method="POST" enctype="multipart/form-data">
+        <input type="hidden" id="filename" name="filename" value={{filename}}>
+        <button type="submit" class="btn btn-info">View {{filename}}</button>
+    </form>
+
+    <button onclick="myFunction()" class="btn btn-info toggle-file-proprties-btn">Toggle File Properties</button>
+
+    {% if width %}
+    <div id="file-properties-container" class="file-properties" style="display: block">
+        <h3>Image Properties</h3>
+        <div> Name: {{filename}} </div>
+        <div> Upload date: {{upload}} </div>
+        <div> Creation date: {{upload}} </div>
+        <div> File size: {{size}} KB</div>
+        <div> Image resolution: {{width}}x{{height}}</div>
+        <div> Avg red: {{avgRed}} </div>
+        <div> Avg green: {{avgGreen}} </div>
+        <div> Avg blue: {{avgBlue}} </div>
+
+    </div>
+    <br></br>
+    {% endif %}
+
+    {% if pdf %}
+    <div id="file-properties-container" class="file-properties" style="display: block">
+        <h3>Pdf Properties</h3>
+        <div> Name: {{filename}} </div>
+        <div> Upload date: {{upload}} </div>
+        <div> Creation date: {{upload}} </div>
+        <div> File size: {{size}} KB</div>
+        <div> Page size: {{pageWidth}}x{{pageHeight}} inches</div>
+        <div> Number of lines: {{numLines}} lines</div>
+        <div> Number of words: {{numWords}} words</div>
+    </div>
+    <br></br>
+    {% endif %}
+
+    <form action="/delete/{{filename}}" method="POST" enctype="multipart/form-data">
+        <input type="hidden" id="filename" name="filename" value={{filename}}>
+        <button type="submit" class="btn btn-danger">Delete {{filename}}</button>
+    </form>
+
+
+
+    <script>
+        function myFunction() {
+            var element = document.getElementById("file-properties-container");
+            if (element.style.display === "none") {
+                element.style.display = "block";
+            } else {
+                element.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
