@@ -43,7 +43,7 @@ MarkupSafe==1.0
 numpy==1.15.2
 oauth==1.0.1
 opencv-python==3.4.3.18
-paramiko==1.15.1
+paramiko==2.10.1
 pathspec==0.5.5
 pdfrw==0.4
 PIL==1.1.6
