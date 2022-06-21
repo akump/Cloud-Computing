@@ -40,7 +40,7 @@ kitchen==1.1.1
 lockfile==0.8
 Markdown==3.0.1
 MarkupSafe==1.0
-numpy==1.15.2
+numpy==1.22.0
 oauth==1.0.1
 opencv-python==3.4.3.18
 paramiko==1.15.1
