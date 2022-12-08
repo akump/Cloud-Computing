@@ -8,7 +8,7 @@ boto==2.48.0
 botocore==1.12.23
 cached-property==1.5.1
 cement==2.8.2
-certifi==2018.8.24
+certifi==2022.12.7
 chardet==3.0.4
 Cheetah==2.4.4
 Click==7.0
